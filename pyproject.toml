@@ -1,0 +1,57 @@
+[project]
+name = "template-python-env"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [{ name = "fernando-peres", email = "fernando.peres@icloud.com" }]
+requires-python = ">=3.13"
+dependencies = []
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = []
+lint = ["mypy>=1.16.1", "pre-commit>=4.2.0", "ruff>=0.12.0"]
+
+# ****************************************************************************************
+# Formatting, Linting, Type Checking, Import Sorting
+# ****************************************************************************************
+
+[tool.ruff]
+line-length = 88
+target-version = "py313"
+fix = true
+exclude = [".venv", "build", "dist", "__pypackages__"]
+src = ["src", "tests"]
+
+
+[tool.ruff.format]
+indent-style = "space"
+quote-style = "double"
+skip-magic-trailing-comma = false
+
+
+[tool.ruff.lint]
+select = ["E", "F", "B", "I"]
+extend-select = [
+    "UP",  # pyupgrade rules
+    "SIM", # simplify rules
+    "C90", # mccabe complexity checks
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["main_lib", "main"]
+
+[tool.mypy]
+python_version = "3.13"
+strict = true
+exclude = ["(list|create)/bin", "^(\\.venv|env|venv|list|create)/"]
+ignore_missing_imports = true
+explicit_package_bases = true
+mypy_path = "src"
+disable_error_code = ["misc"]
