@@ -2,7 +2,9 @@
 
 A ready-to-use Streamlit template for chat applications, perfect for fast prototyping.
 
-<img src="/static/img/article-cover.png" alt="Project Cover" style="width:100%; max-width:800px;" />
+> It us under construction. Soon it will be ready for use.
+
+<img src="/static/img/uc.png" alt="Project Cover" style="width:100%; max-width:800px;" />
 
 
 🧰 This template is built using the following tools:
