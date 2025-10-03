@@ -36,7 +36,7 @@ Step 3: Set up pre-commit hooks
 pre-commit install  
 ```
 
-## 2. Usage
+## 2. Cooments about pre-commit
 
 Check pre-commit hook status
 
