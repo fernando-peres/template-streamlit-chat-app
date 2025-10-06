@@ -4,6 +4,8 @@ Home Page - UI
 
 import streamlit as st
 
+from ui.sidebar import Sidebar
+
 
 class HomePage:
     """Class for the Home Page UI."""
@@ -15,6 +17,9 @@ class HomePage:
     def render(self) -> None:
         st.title(self.title)
         st.write(self.description)
+
+        sidebar = Sidebar()
+        sidebar.render()
 
 
 if __name__ == "__main__":
